@@ -245,6 +245,33 @@ If you lose this file, you lose knowing the state of your infrastructure.
 '.terraform' directory contains binaries and metadata of terraform providers. 
 
 
+#### Issues with Terraform Cloud Login and Gitpod Workspaces
+
+We have automated the process of the Terraform Cloud Login with Gitpod Workspace that some users may have (I did not have this issue). 
+
+The bash script is found at [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+The workaround is manually generate a token in Terraform Cloud
+
+[](https://app.terraform.io/app/settings/tokens?source=terraform-login)
+
+Then create open the file manually here:
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code (replace your token in the file):
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+    }
+  }
+}
+```
 
 
 
