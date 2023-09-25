@@ -4,10 +4,18 @@
 
 - [Semantic Versioning](#semantic-versioning)
 - [Install the Terraform CLI](#install-the-terraform-cli)
+    - [Considerations for Linux Distributions](Considerations-for-Linux-Distributions)
+    - [Refactoring into Bash Scripts](#Refactoring-into-Bash-Scripts)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
 
 ## Semantic Versioning :mage:
 
-This project is going to utilize semactic versioning for its tagging. 
+This project is going to utilize semantic versioning for its tagging. 
 [semver.org](https://semver.org/)
 
 
@@ -16,12 +24,12 @@ The general format:
  **MAJOR.MINOR.PATCH**, eg. `1.0.1`
 
 - **MAJOR** version when you make incompatible API changes
-- **MINOR** version when you add functionality in a backward compatible manner
+- **MINOR** version when you add functionality in a backward-compatible manner
 - **PATCH** version when you make backward compatible bug fixes
 
 ## Install the Terraform CLI
 
-The Terraform CLI installation instructions have changed due to gpg keyring changes. So we needed to refer to the latest install CLI instructions via Terraform Documentation and change the scripting for install. 
+The Terraform CLI installation instructions have changed due to gpg keyring changes. So we needed to refer to the latest install CLI instructions via Terraform Documentation and modify the installation scripting. 
 
 [Install Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
