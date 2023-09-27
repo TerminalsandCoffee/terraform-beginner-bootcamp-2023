@@ -9,7 +9,7 @@
         - [Shebang Considerations](#Shebang-Considerations)
         - [Execution Considerations](#Execution-Considerations)
         - [Linux Permission Considerations](#Linux-Permission-Considerations)
-- [Github Lifecycle (Before, Init, Command)](#Github-Lifecycle-Before-init-Command)
+- [Gitpob Lifecycle (Before, Init, Command)](#Gitpob-Lifecycle-Before-init-Command)
 - [Working with Env Vars](#Working-with-Env-Vars)
     - [env command](#env-command)
     - [Setting and Unsetting Env Vars](#Setting-and-Unsetting-Env-Vars)
