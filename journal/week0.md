@@ -1,6 +1,5 @@
 # Terraform Beginner Bootcamp 2023
 
-<<<<<<< HEAD
 ## Table of Contents
 
 - [Semantic Versioning](#semantic-versioning)
@@ -10,7 +9,7 @@
         - [Shebang Considerations](#Shebang-Considerations)
         - [Execution Considerations](#Execution-Considerations)
         - [Linux Permission Considerations](#Linux-Permission-Considerations)
-- [Gitpob Lifecycle (Before, Init, Command)](#Gitpob-Lifecycle-Before-init-Command)
+- [Github Lifecycle (Before, Init, Command)](#Github-Lifecycle-Before-init-Command)
 - [Working with Env Vars](#Working-with-Env-Vars)
     - [env command](#env-command)
     - [Setting and Unsetting Env Vars](#Setting-and-Unsetting-Env-Vars)
@@ -83,7 +82,7 @@ This bash script is located here: [./bin/install_terraform_cli](./bin/install_te
 
 - This will keep the Gitpod Task File ([.gitpod.yml](.gitpod.yml)) tidy. 
 - This allows us an easier to debug and execute manually Terraform CLI install
-- This will allow better portability for other porjects that will need to install the Terraform CLI 
+- This will allow better portability for other projects that will need to install the Terraform CLI 
 
 
 ### Shebang Considerations
@@ -109,7 +108,7 @@ https://en.wikipedia.org/wiki/Shebang_(Unix)
 
 #### Linux Permission Considerations
 
-In order to make our bash scripts executable we need to change linux permissions for the fix to be executable at the user mode. 
+In order to make our bash scripts executable we need to change Linux permissions for the fix to be executable in the user mode. 
 
 ```sh
 chmod u+x ./bin/install_terraform_cli 
@@ -125,7 +124,7 @@ https://en.wikipedia.org/wiki/Chmod
 
 ### Github Lifecycle (Before, Init, Command)
 
-We need to be careful when using the Init because it will not rerun if we restart an exisiting workspace. 
+We need to be careful when using the Init because it will not rerun if we restart an existing workspace. 
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
@@ -135,15 +134,15 @@ https://www.gitpod.io/docs/configure/workspaces/tasks
 
 #### env command
 
-We can list out all Environment Varibales (Env Vars) using the 'env' command
+We can list out all Environment Variables (Env Vars) using the 'env' command
 
 We can filter specific env vars using grep eg. 'env | grep AWS_'
 
 #### Setting and Unsetting Env Vars
 
-In the terminal we can set using 'export Hello='world'
+In the terminal, we can set using 'export Hello='world'
 
-In the terminal we unset using 'unset HELLO'
+In the terminal, we unset using 'unset HELLO'
 
 We can set an env var temporarily when just running a command 
 
@@ -151,7 +150,7 @@ We can set an env var temporarily when just running a command
 HELLO='world' ./bin/print_message
 ```
 
-Within a bash script we can set env without writing export eg. 
+Within a bash script, we can set env without writing export eg. 
 
 ```sh
 #!/usr/bin/env bash
@@ -166,9 +165,9 @@ We can print an Env Var using echo eg. 'echo $HELLO'
 
 #### Scoping of Env Vars
 
-When you open up new bash terminals in VSCode it will not be aware of env vars that you have set in another window
+When you open up new bash terminals in VSCode it will not be aware of the Env Vars that you have set in another window.
 
-If you want Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. '.bash_profile'
+If you want Env Vars to persist across all future bash terminals that are open, you will need to set env vars in your bash profile. eg. '.bash_profile'
 
 #### Persisting Env Vars in Gitpod
 
@@ -197,7 +196,7 @@ We can check if our AWS credentials are configured correctly by running the foll
 aws sts get-caller-identity
 ```
 
-If it is successful you should see a json payload return that looks like this: 
+If it is successful you should see a JSON payload return that looks like this: 
 
 ```json
 {
@@ -214,38 +213,38 @@ We'll need to generate AWS CLI credits from IAM User in order to use the AWS CLI
 
 ### Terraform Registry 
 
-Terraform sources their providers and modules from the Terraform registrory which located at [registry.terraform.io](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+Terraform sources its providers and modules from the Terraform registry which is located at [registry.terraform.io](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
 
-- **Providers** is an interface to APIs that will allow us to create resources in terraform.
-- **Modules** are a way to make large amount of terraform code modular, portable, and sharebale. 
+- **Providers** is an interface to APIs that will allow us to create resources in Terraform.
+- **Modules** are a way to make large amounts of terraform code modular, portable, and shareable. 
 
 [Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
 
 ### Terraform Console
 
-We can see alist of all Terraform commands by simply typing 'terraform'
+We can see a list of all Terraform commands by simply typing 'terraform'
 
 #### Terraform Init
 
-At the start of a new terraform project we will run 'terraform init' to download the binaries for the terraform providers that we'll use in this project. 
+At the start of a new terraform project, we will run 'terraform init' to download the binaries for the terraform providers that we'll use in this project. 
 
 #### Terraform Plan
 
 'terraform plan'
 
-This will generate out a changeset, about the stat of our infrastructure and what will be changed. 
+This will generate out a changeset, about the state of our infrastructure and what will be changed. 
 
-We can output this changeset ie "plan" to be passed to apply, but often you can just ignore output information. 
+We can output this changeset i.e. "plan" to be passed to apply, but often you can just ignore output information. 
 
 #### Terraform Apply 
 
 'terraform apply'
 
-This will run a plan and pass the changeset to be execute by terraform. Apply should prompt yes or no. 
+This will run a plan and pass the changeset to be executed by Terraform. Apply should prompt yes or no. 
 
 If we want to automatically approve an apply we can provide the auto approve flag eg. 'terraform apply --auto-approve'
 
-#### Terrform Destroy
+#### Terraform Destroy
 
 'terraform destroy'
 This will destroy resources.
@@ -260,9 +259,9 @@ The Terraform Lock File **should be committed** to your Version Control System (
 
 ### Terraform State Files 
 
-'.terraform.tfstate' contains information about the current state of your infransctructure. 
+'.terraform.tfstate' contains information about the current state of your infrastructure. 
 
-This file should **not be commited** to your Version Control System (VSC) 
+This file should **not be committed** to your Version Control System (VSC) 
 
 This file can contain sensitive data. 
 
@@ -281,7 +280,7 @@ We have automated the process of the Terraform Cloud Login with Gitpod Workspace
 
 The bash script is found at [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
 
-The workaround is manually generate a token in Terraform Cloud
+The workaround is to manually generate a token in Terraform Cloud
 
 [](https://app.terraform.io/app/settings/tokens?source=terraform-login)
 
@@ -319,13 +318,7 @@ Provide the following code (replace your token in the file):
 
 
 
-=======
-![TerraTown_Architecture](https://github.com/TerminalsandCoffee/terraform-beginner-bootcamp-2023/assets/26743149/3b4e5bb2-7c8a-4697-ab96-0fc3f4bb5e1e)
->>>>>>> main
 
-## Weekly Journals 
-- [Week 0 Journal](journal/week0.md)
 
- ## Extras
-- [GitHub Markdown TOC Generator](https://ecotrust-canada.github.io/markdown-toc/)
+
 
