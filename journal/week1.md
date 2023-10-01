@@ -63,3 +63,26 @@ The order of precedence for Terraform variables is:
 3. Variable files (*.tfvars)
 4. auto.tfvars
 5. Default values in the configuration
+
+# Terraform and Input Variables
+
+## Terraform Cloud Variables
+
+In Terraform, we can set two kinds of variables:
+
+1. **Environment Variables**: These are set in your bash terminal, e.g., AWS credentials.
+
+2. **Terraform Variables**: These are typically set in your `.tfvars` file.
+
+We can set Terraform Cloud variables to be sensitive so they are not visibly shown in the UI.
+
+## Loading Terraform Input Variables
+
+### Terraform Input Variables
+
+You can use the `-var` flag to set an input variable or override a variable in the `.tfvars` file. For example:
+
+```bash
+terraform -var user_id="my-user_id"
+```
+
