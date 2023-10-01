@@ -7,7 +7,6 @@ terraform {
     }
   }
 
-
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -19,6 +18,7 @@ terraform {
     }
   }
 }
+
 
 provider "aws" {
   # Configuration options
