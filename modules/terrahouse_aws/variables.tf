@@ -1,19 +1,21 @@
 variable "user_uuid" {
-  description = "User UUID"
+  description = "The UUID of the user"
   type        = string
-
   validation {
-    condition     = can(regex("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", var.user_uuid))
-    error_message = "Invalid user UUID format. It should be in the form of a UUID (e.g., 123e4567-e89b-12d3-a456-426655440000)."
+    condition        = can(regex("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$", var.user_uuid))
+    error_message    = "The user_uuid value is not a valid UUID."
   }
 }
 
 variable "bucket_name" {
-  description = "AWS S3 Bucket Name"
+  description = "The name of the S3 bucket"
   type        = string
 
   validation {
-    condition     = can(regex("^[a-z0-9.-]{3,63}[a-z0-9]$", var.bucket_name))
-    error_message = "Bucket name must be between 3 and 63 characters long, start and end with a lowercase letter or number, and contain only lowercase letters, numbers, hyphens (-), and periods (.)"
+    condition     = (
+      length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 && 
+      can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
+    )
+    error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
   }
 }
